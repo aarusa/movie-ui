@@ -1,4 +1,4 @@
-// import Button from './Button';
+import Button from './Button';
 import { useState } from "react";
 
 const Movie = ({movietitle = "Movie Title", poster = "https://picsum.photos/300/450"}) => {
@@ -25,11 +25,11 @@ const Movie = ({movietitle = "Movie Title", poster = "https://picsum.photos/300/
                 <img className="movie-image" src={poster} alt={movietitle} />
                 <div className="movie-content">
                     <p className="movie-title">{movietitle}</p>
-                    <button 
-                        className={`movie-btn ${favourites ? 'added': ''}`} 
-                        onClick={favourites ? removeFavourites : handleSubmit}
-                    >&#9825; {favourites ? 'Remove from Favourites': 'Add to Favourites'}</button>
-                    {/* <Button text='Add to favourites'/> */}
+                    <Button 
+                        className={`movie-btn ${favourites ? 'added': ''}`}
+                        onClick={favourites ? removeFavourites : handleSubmit} 
+                        text={favourites ? 'Remove from Favourites': 'Add to Favourites'} 
+                    />
                 </div>
             </article>
             {/* modal */}
