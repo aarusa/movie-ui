@@ -1,5 +1,6 @@
 import Button from './Button';
 import { useState } from "react";
+import Modal from './Modal';
 
 const Movie = ({movietitle = "Movie Title", poster = "https://picsum.photos/300/450"}) => {
 
@@ -33,16 +34,7 @@ const Movie = ({movietitle = "Movie Title", poster = "https://picsum.photos/300/
                 </div>
             </article>
             {/* modal */}
-            {
-                submitted && 
-                <div className="modal-overlay">
-                    <div className="modal">
-                        <h2>Added to favourites</h2>
-                        <p>You added {movietitle} to favourites.</p>
-                        <button className="close-btn" onClick={closeModal}>Close</button>
-                    </div>
-                </div>
-            }
+            <Modal isOpen={submitted} onClose={closeModal} movietitle={movietitle} />
         </>
      );
 }
